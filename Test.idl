@@ -1,0 +1,22 @@
+#ifndef __TEST_IDL__
+#define __TEST_IDL__
+
+module Test {
+	struct Message{
+		string title;
+		string author;
+		string date;
+		string body;
+	};
+
+	interface Forum {
+
+		readonly attribute string theme;
+		readonly attribute string moderator;
+		boolean postMessage(in Message m);
+		Message getMessage(in string title);
+		boolean removeMessage(in string title);
+	};
+};
+
+#endif
